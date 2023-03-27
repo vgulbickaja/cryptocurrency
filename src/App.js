@@ -16,7 +16,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div className="cryptoHeader"></div>
+      <div className="cryptoHeader">
+        <input type="text" placeholder="Enter currency name..." />
+      </div>
       <div className="cryptoDisplay">
         {listOfCoins.map((coin) => {
           return (
