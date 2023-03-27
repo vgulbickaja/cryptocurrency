@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./App.css";
 import Axios from "axios";
 import { useEffect, useState } from "react";
 import Coin from "./Components/Coin";
