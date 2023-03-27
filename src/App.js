@@ -1,19 +1,25 @@
 import "./App.scss";
 import Axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [listOfCoins, setListOfCoins] = useState([]);
+
   useEffect(() => {
-    Axios.get("https://api.coinstats.app/public/v1/coins?skip=0&limit=10").then(
+    Axios.get("https://api.coinstats.app/public/v1/coins?skip=0").then(
       (response) => {
-        console.log(response.data);
+        setListOfCoins(response.data.coins);
       }
     );
   }, []);
   return (
     <div className="App">
-      <div className="cryptoHead"></div>
-      <div className="cryptoList"></div>
+      <div className="cryptoHeader"></div>
+      <div className="cryptoDisplay">
+        {listOfCoins.map((coin) => {
+          return <h1>{coin.name}</h1>;
+        })}
+      </div>
     </div>
   );
 }
