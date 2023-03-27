@@ -3,9 +3,9 @@ import React from "react";
 function Coin({ name, price, symbol, icon }) {
   return (
     <div className="coin">
-      <h2>{name}</h2>
-      <h3>Price: {price}</h3>
-      <h3>Symbol: {symbol}</h3>
+      <h1>{name}</h1>
+      <p>Price: {price}</p>
+      <p>Symbol: {symbol}</p>
       <img src={icon} />
     </div>
   );
